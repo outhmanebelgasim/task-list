@@ -15,7 +15,7 @@ class TaskList extends Model
         "user_id"
     ];
 
-    public function list(){
+    public function task(){
         return $this->hasMany(Task::class);
     }
 
