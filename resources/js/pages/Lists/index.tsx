@@ -96,6 +96,11 @@ export default function ListIndex({ lists, flash }: Props) {
         }
     };
 
+    const handleCreateNew = () => {
+        setEditingList(null);
+        reset();
+    };
+
     const handleEdit = (list: List) => {
         setEditingList(list);
         setData({ title: list.title, description: list.description || '' });
@@ -134,7 +139,7 @@ export default function ListIndex({ lists, flash }: Props) {
                     <h1 className="text-2xl font-bold">Lists</h1>
                     <Dialog open={isOpen} onOpenChange={setIsOpen}>
                         <DialogTrigger asChild>
-                            <Button>
+                            <Button onClick={handleCreateNew}>
                                 <Plus className="mr-2 h-4 w-4" />
                                 New List
                             </Button>
