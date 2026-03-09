@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    protected $fillabale = [
+    protected $fillable = [
         "title",
         "description",
         "is_completed",
