@@ -119,18 +119,18 @@ export default function ListIndex({ lists, flash }: Props) {
                 {/* Toast */}
                 {showToast && (
                     <div
-                        className={`fixed top-4 right-4 z-50 flex items-center gap-2 rounded-lg p-4 shadow-lg ${
+                        className={`fixed top-4 right-4 z-50 flex items-center gap-2 rounded-lg border px-4 py-3 shadow-lg ${
                             toastType === 'success'
-                                ? 'bg-green-500'
-                                : 'bg-red-500'
-                        } animate-in text-white slide-in-from-top-5 fade-in`}
+                                ? 'border-green-200 bg-green-50 text-green-800 dark:border-green-800 dark:bg-green-950/90 dark:text-green-200'
+                                : 'border-red-200 bg-red-50 text-red-800 dark:border-red-800 dark:bg-red-950/90 dark:text-red-200'
+                        } animate-in slide-in-from-top-5 fade-in`}
                     >
                         {toastType === 'success' ? (
-                            <CheckCircle2 className="h-5 w-5" />
+                            <CheckCircle2 className="h-5 w-5 shrink-0" />
                         ) : (
-                            <XCircle className="h-5 w-5" />
+                            <XCircle className="h-5 w-5 shrink-0" />
                         )}
-                        <span>{toastMessage}</span>
+                        <span className="font-medium">{toastMessage}</span>
                     </div>
                 )}
 
